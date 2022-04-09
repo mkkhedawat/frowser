@@ -11,6 +11,12 @@ because all of existing ones just relied on User Agents & that's not enough
 
 ~5 KB when plain gzipped
 
+
+## demo 
+
+https://mkkhedawat.github.io/frowser/
+
+
 ## how to use
 
 ### import
@@ -70,6 +76,7 @@ console.log(frowser.parse(window.navigator.userAgent));
 Frowser.Parser.ParsedResult
 ```
 
+
 ## Filtering browsers
 
 ```javascript
@@ -114,8 +121,10 @@ Thus, you can define OS or platform specific rules and they will have more prior
 - Test `npm test`
 - Raise pull request
 
+
 ## References
 Base code is taken from [Bowser](https://github.com/lancedikson/bowser)
+
 
 ## Contributors
 - Manish Khedawat (https://github.com/mkkhedawat)
