@@ -182,8 +182,8 @@ class Parser {
       this.parsedResult.os = os.describe(this.getUA());
     }
 
-    if (this.enableFeatureDetection() && featuresParsersMap.os[os.name]) {
-      this.parsedResult.os = featuresParsersMap.os[os.name].describe(
+    if (this.enableFeatureDetection() && featuresParsersMap.os[this.parsedResult.os.name]) {
+      this.parsedResult.os = featuresParsersMap.os[this.parsedResult.os.name].describe(
         this.parsedResult.os,
         this.getUA(),
         this.parsedResult
@@ -262,6 +262,7 @@ class Parser {
       this.parsedResult.platform = platform.describe(this.getUA());
     }
 
+  
     if (
       this.enableFeatureDetection() &&
       featuresParsersMap.platform[this.parsedResult.platform.type] &&

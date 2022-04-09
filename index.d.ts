@@ -7,10 +7,10 @@ declare namespace Frowser {
   /**
    * Creates a Parser instance
    * @param {string} UA - User agent string
-   * @param {boolean} skipParsing
+   * @param {boolean} skipFeatureDetection
    */
 
-  function getParser(UA: string, skipParsing?: boolean): Parser.Parser;
+  function getParser(UA: string, skipFeatureDetection?: boolean): Parser.Parser;
 
   /**
    * Creates a Parser instance and runs Parser.getResult immediately
@@ -30,7 +30,7 @@ declare namespace Frowser {
 
   namespace Parser {
     interface Parser {
-      constructor(UA: string, skipParsing?: boolean): Parser.Parser;
+      constructor(UA: string, skipFeatureDetection?: boolean): Parser.Parser;
 
       /**
        * Get parsed browser object
@@ -225,6 +225,7 @@ declare namespace Frowser {
     interface Details {
       name?: string;
       version?: string;
+      spoofed?: boolean;
     }
 
     interface OSDetails extends Details {

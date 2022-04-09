@@ -11,7 +11,8 @@ export default {
   os: {
     [OS_MAP.MacOS]: {
       describe(os, UA, parsedResult) {
-        if (os.name === 'macos' && 'ontouchend' in document) {
+        if ('ontouchend' in document) {
+          os.spoofedName = os.name;
           os.name = OS_MAP.iOS;
           os.spoofed = true;
           delete os.version;
@@ -26,7 +27,9 @@ export default {
       [OS_MAP.MacOS]: {
         describe(platform, UA, parsedResult) {
           if ('ontouchend' in document) {
+            platform.spoofedType = platform.type;
             platform.type = PLATFORMS_MAP.tablet;
+            platform.model = 'iPad',
             platform.spoofed = true;
           }
           return platform;

@@ -1,5 +1,5 @@
 import Utils from './utils.js';
-import { PLATFORMS_MAP } from './constants.js';
+import { PLATFORMS_MAP, OS_MAP } from './constants.js';
 
 /*
  * Tablets go first since usually they have more specific
@@ -199,6 +199,22 @@ export default [
     describe() {
       return {
         type: PLATFORMS_MAP.mobile,
+      };
+    },
+  },
+
+   /* MacOS spoofed on iPAD */
+   {
+    test(parser) {
+      return parser.getOS().spoofed && String(parser.getOS().spoofedName).toLowerCase() === 'macos' && parser.getOSName(true) ==='ios';
+    },
+    describe() {
+      return {
+        type: PLATFORMS_MAP.tablet,
+        spoofed: true,
+        spoofedType: PLATFORMS_MAP.desktop,
+        vendor: 'Apple',
+        model: 'iPad',
       };
     },
   },
