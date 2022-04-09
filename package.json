@@ -1,0 +1,89 @@
+{
+  "name": "frowser",
+  "version": "0.1.0",
+  "description": "feature based browser detection",
+  "keywords": [
+    "browser",
+    "useragent",
+    "user-agent",
+    "parser",
+    "ua",
+    "detection",
+    "feature",
+    "frowser",
+    "react"
+  ],
+  "homepage": "https://github.com/mkkhedawat/frowser",
+  "author": "Manish Khedawat <writetomansa@gmail.com>",
+  "contributors": [
+    {
+      "name": "Manish Khedawat",
+      "url": "https://www.linkedin.com/in/mkkhedawat/"
+    }
+  ],
+  "main": "build/es5.js",
+  "browser": "build/es5.js",
+  "module": "src/index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkkhedawat/frowser.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/helper-compilation-targets": "^7.17.7",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.7",
+    "ava": "^4.1.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.4",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-istanbul": "^6.1.1",
+    "compression-webpack-plugin": "^9.2.0",
+    "core-js": "^3.21.1",
+    "coveralls": "^3.1.1",
+    "docdash": "^1.2.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-ava": "^13.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "gh-pages": "^3.2.3",
+    "jsdoc": "^3.6.10",
+    "nyc": "^15.1.0",
+    "prettier": "2.6.2",
+    "sinon": "^13.0.1",
+    "testem": "^3.6.0",
+    "webpack": "^5.71.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "yamljs": "^0.3.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/mkkhedawat/frowser/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "generate-and-deploy-docs": "npm run generate-docs && gh-pages --dist docs --dest docs",
+    "watch": "webpack --watch --config webpack.config.js",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint ./src",
+    "format": "prettier --check '*.{js,jsx,html,json}'",
+    "format-fix": "prettier --write '*/**/*.{js,jsx,html,json}'",
+    "testem": "testem",
+    "test": "nyc --reporter=html --reporter=text ava",
+    "test:watch": "ava --watch",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "generate-docs": "jsdoc -c jsdoc.json"
+  },
+  "license": "MIT"
+}

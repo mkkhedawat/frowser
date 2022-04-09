@@ -1,0 +1,10 @@
+test
+coverage
+node_modules
+docs
+*.gz
+jsdoc.json
+webpack.config.js
+example
+src
+.*
