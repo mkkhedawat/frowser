@@ -5,7 +5,7 @@ script:
 - npm i
 - npm run build
 - npm test
-- cd example && npm run build && cd ..
+- cd example && npm i && npm run build && cd ..
 
 deploy:
   provider: pages
