@@ -1,6 +1,6 @@
 # frowser
 
-Ffeature based Browser Detection library
+feature based Browser Detection library
 
 ## why another browser detection library ?
 
@@ -64,6 +64,11 @@ console.log(frowser.parse(window.navigator.userAgent));
 }
 ```
 
+## types
+
+```
+Frowser.Parser.ParsedResult
+```
 
 ## Filtering browsers
 

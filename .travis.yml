@@ -1,8 +1,21 @@
 language: node_js
-after_success: npm run coverage
 node_js:
-  - "12.16.3"
+  - "14.18.2"
 script:
-- npm run lint
+- npm i
 - npm run build
 - npm test
+- cd example && npm run build && cd ..
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  local_dir: ./example/build
+  on:
+    branch: main
+
+branches:
+  only:
+    - main
