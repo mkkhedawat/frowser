@@ -13,7 +13,7 @@ export default {
       describe(os, UA, parsedResult) {
         if ('ontouchend' in document) {
           os.spoofedName = os.name;
-          os.name = OS_MAP.iOS;
+          os.name = OS_MAP.iPadOS;
           os.spoofed = true;
           delete os.version;
           delete os.versionName;

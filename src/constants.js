@@ -96,6 +96,7 @@ export const OS_MAP = {
   Windows: 'Windows',
   MacOS: 'macOS',
   iOS: 'iOS',
+  iPadOS: 'iPadOS',
   Android: 'Android',
   WebOS: 'WebOS',
   BlackBerry: 'BlackBerry',
