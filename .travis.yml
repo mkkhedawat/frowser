@@ -30,4 +30,4 @@ deploy:
     tag: "next"
     on:
       all_branches: true
-      condition: $(head package.json | grep neta)
+      condition: $(head package.json | grep -beta)
