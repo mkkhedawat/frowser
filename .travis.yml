@@ -8,14 +8,25 @@ script:
 - cd example && npm i && npm run build && cd ..
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: false
-  local_dir: ./example/build
-  on:
-    branch: main
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: false
+    local_dir: ./example/build
+    on:
+      branch: main
 
-branches:
-  only:
-    - main
+  - provider: npm
+    skip_cleanup: true
+    email: $NPM_AUTH_EMAIL
+    api_key: $NPM_AUTH_TOKEN
+    on:
+      tags: true
+
+  - provider: npm
+    skip_cleanup: true
+    email: $NPM_AUTH_EMAIL
+    api_key: $NPM_AUTH_TOKEN
+    tag: "next"
+    on:
+      branch: main
