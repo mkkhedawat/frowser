@@ -30,3 +30,4 @@ deploy:
     tag: "next"
     on:
       branch: main
+      condition: $(head package.json | grep -beta)
