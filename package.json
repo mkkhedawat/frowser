@@ -1,6 +1,6 @@
 {
   "name": "frowser",
-  "version": "0.2.0",
+  "version": "1.0.0-beta1",
   "description": "feature based browser detection",
   "keywords": [
     "browser",
@@ -28,6 +28,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mkkhedawat/frowser.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
