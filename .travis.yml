@@ -28,6 +28,6 @@ deploy:
     email: $NPM_AUTH_EMAIL
     api_key: $NPM_AUTH_TOKEN
     tag: "next"
-    condition: $(head package.json | grep -neta)
+    condition: $(head package.json | grep neta)
     on:
       all_branches: true
