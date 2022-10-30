@@ -29,5 +29,5 @@ deploy:
     api_key: $NPM_AUTH_TOKEN
     tag: "next"
     on:
-      all_branches: true
+      branch: main
       condition: $(head package.json | grep -beta)
