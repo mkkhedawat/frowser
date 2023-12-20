@@ -78,8 +78,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Publish to NPM with Beta Tag
-        if: steps.check_version.outputs.is_beta == 'true'
+      - run: npm ci
+      - if: steps.check_version.outputs.is_beta == 'true'
         run: npm publish
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
