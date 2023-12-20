@@ -27,6 +27,7 @@ jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
     needs: build-and-test
+    if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
       - name: build pages
