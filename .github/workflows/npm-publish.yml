@@ -73,24 +73,13 @@ jobs:
             echo "Version is not a beta: $VERSION"
             echo "::set-output name=is_beta::false"
             fi
-      - name: Check Commit Author
-        id: check_author
-        run: |
-            AUTHOR_NAME=$(git log -1 --pretty=format:'%an')
-            if [ "$AUTHOR_NAME" = "mkkhedawat" ]; then
-            echo "Commit made by mkkhedawat"
-            echo "::set-output name=authorized::true"
-            else
-            echo "Commit not made by mkkhedawat"
-            echo "::set-output name=authorized::false"
-            fi
       - name: Use Node.js ${{ matrix.node-version }}
         if: steps.check_version.outputs.is_beta == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Publish to NPM with Beta Tag
-        if: steps.check_version.outputs.is_beta == 'true' && steps.check_author.outputs.authorized == 'true'
+        if: steps.check_version.outputs.is_beta == 'true'
         run: npm publish
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
