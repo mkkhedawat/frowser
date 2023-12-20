@@ -1,4 +1,5 @@
 import Parser from './parser.js';
+import { BROWSER_MAP, PLATFORMS_MAP, OS_MAP } from './constants.js';
 
 class Frowser {
   static getParser(UA, skipFeatureDetection = false) {
@@ -10,4 +11,5 @@ class Frowser {
   }
 }
 
+export { BROWSER_MAP, PLATFORMS_MAP, OS_MAP };
 export default Frowser;
