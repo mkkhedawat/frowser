@@ -24,7 +24,7 @@ function App() {
         setUserAgent(event.target.value);
       }}
       className='input-container' />
-    <JSON src={info} />;
+    <JSON src={info} />
   </Box>);
 }
 
