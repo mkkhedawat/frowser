@@ -15,10 +15,11 @@ declare namespace Frowser {
   /**
    * Creates a Parser instance and runs Parser.getResult immediately
    * @param UA - User agent string
+   * @param {boolean} skipFeatureDetection
    * @returns {Parser.ParsedResult}
    */
 
-  function parse(UA: string): Parser.ParsedResult;
+  function parse(UA: string, skipFeatureDetection?: boolean): Parser.ParsedResult;
 
   /**
    * Constants exposed via Frowser getters
