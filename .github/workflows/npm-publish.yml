@@ -22,9 +22,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build
-    - run: npm test
+    - run: npm install && npm run build && npm test
+    - run: cd example && npm i --legacy-peer-deps && npm run build
 
   deploy-to-github-pages:
     runs-on: ubuntu-latest
@@ -35,7 +34,7 @@ jobs:
       - name: build pages
         run: |
           cd example
-          npm install
+          npm install --legacy-peer-deps
           npm run build
       - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
